@@ -1,0 +1,127 @@
+@import "reset.css";
+
+body {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/****************************************************/
+
+nav {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px inset white;
+}
+
+/****************************************************/
+
+#movieList {
+  display: flex;
+  justify-content: center;
+}
+
+/****************************************************/
+
+#summaryList {
+  width: 800px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#summaryList li {
+  width: 200px;
+  margin: 12px 7px;
+  border: 1px groove gray;
+  box-shadow: 2px 2px 2px darkgray;
+}
+
+.summaryItemDescDiv {
+  position: relative;
+}
+
+#summaryList img {
+  width: 200px;
+}
+
+.summaryDesc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: rgb(51, 50, 50);
+}
+
+.summaryDesc:hover {
+    animation: showDesc 0.3s linear 1 forwards;
+    cursor: pointer;
+}
+
+@keyframes showDesc {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+.summaryDesc p {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  line-height: 120%;
+  margin: 10px;
+
+  /* 텍스트가 넘칠 때 ...로 생략하기
+    https://cocoon1787.tistory.com/838
+    https://digiconfactory.tistory.com/entry/CSS%EC%BD%98%ED%85%90%EC%B8%A0%EC%9E%90%EB%A5%B4%EA%B8%B0-webkit*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+}
+
+#summaryList li > p {
+  margin: 7px 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/****************************************************/
+
+#detailList {
+  width: 800px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#detailList:hover {
+    cursor: pointer;
+}
+
+
+#detailList p {
+  margin: 5px 0;
+}
+
+#detailList img {
+  width: 120px;
+}
+
+.detailItem {
+  width: 100%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 3px;
+}
